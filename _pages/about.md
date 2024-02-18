@@ -17,4 +17,4 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hello?
+I am a MSc student in Artificial Intelligence at the [University of Amsterdam](https://www.uva.nl/en). Previously I was a Machine Learning Engineer at [Quantiphi](https://quantiphi.com/) within the NVIDIA vertical working in applied AI research. I completed my bachelors (B.Tech. 2020) in Electronics and Communication Engineering at the [National Institute of Technology, Nagpur](https://vnit.ac.in/).
