@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RE Label-Free XAI 
+title: Label-Free XAI 
 description: In this work, we evaluate the reproducibility of the paper Label-Free Explainability for Unsupervised Models by Crabbe and van der Schaar. Our goal is to reproduce the paper's four main claims in a label‐free setting and extend it's research to assess robustness.
 img: assets/img/label-free-xai.png
 importance: -1
