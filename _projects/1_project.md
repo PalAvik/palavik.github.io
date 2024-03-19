@@ -1,81 +1,21 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
+title: \[RE] Label-Free XAI 
+description: In this work, we evaluate the reproducibility of the paper LabelFree Explainability for Unsupervised Models by Crabbe and van der Schaar. Our goal is to reproduce the paper's four main claims in a label‐free setting and extend it's research to assess robustness.
 img: assets/img/12.jpg
 importance: 1
-category: work
-related_publications: true
+category: masters
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+Deep learning models are getting more and more advanced, making it difficult for humans to understand and retrace how an algorithm arrives at a specific result. To solve this problem, explanation methods were developed.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Post‐Hoc methods separate explanations from models allowing explanation methods to be compatible with a variety of models. They treat these models as "black boxes" due to their increasing complexity. Most of the post‐hoc explanation techniques require labels to explain black‐box outputs and thus they work only in a supervised setting. The paper Label-Free Explainability for Unsupervised Models, by J. Crabbé and M. van der Schaar’s goal is to explain black‐box outputs in a label‐free setting. The authors introduce two extensions for the Feature Importance and the Example Importance that highlight influential features and training examples respectively for a black box to construct representations at inference time.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+The contribution of our work is summarized as follows:
+1. We reproduce the main experiments by Crabbé and Schaar to reproduce their main claims.
+2. We conduct additional experiments to assess the robustness of label‐free techniques proposed by the authors. Since they originally experiment on image and time‐series datasets, we extend their techniques to find salient features and training samples for graphs and text datasets respectively.
+3. We find that one of the authors' claims is model‐specific when we introduce a penalty term to the loss function of those models.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
+The code implementation of our study is publicly available <a href="https://github.com/vpariza/Re-Label-Free-XAI">here</a>.
+Read more <a href="https://openreview.net/pdf?id=qP34dvJpHd">here</a>.
