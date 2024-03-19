@@ -22,5 +22,5 @@ Thus, we ask the following research questions in our study:
 
 In summary, our experiments show that the results of TIFU-KNN in the original paper are reproducible with little variations. The model again outperforms plain frequency methods on new datasets which is also verified using additional metrics. Our fairness analysis proves that model performance is dependent on the dataset and user characteristics. Lastly, NBR with VAE architecture remains challenging but still provides some useful trends, and future work in better representation learning could further provide gainful insights into recommender systems.
 
-The code implementation of our study is publicly available <a href="https://github.com/madhu221b/probing-lms">here</a>.
-Read more <a href="https://arxiv.org/abs/2402.16168v1">here</a>.
+The code implementation of our study is publicly available <a href="https://github.com/pimpraat/RecSysProject">here</a>.
+Read more <a href="https://arxiv.org/abs/2402.17925">here</a>.
