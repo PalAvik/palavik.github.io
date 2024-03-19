@@ -1,81 +1,19 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
-importance: 2
-category: work
-giscus_comments: true
+title: Hitting "Probe"rty with Non-Linearity
+description: We reformulate the design of nonlinear structural probes introduced by (White et al., 2021) making its design simpler yet effective. We also design a visualization framework that lets us qualitatively assess how strongly two words in a sentence are connected in the predicted dependency tree.
+img: assets/img/linear_rbf_12.png
+importance: -2
+category: masters
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+In human languages, the meaning of a sentence is composed hierarchically - small chunks of words together make successively larger chunks. We refer to this tree-structured hierarchy  of a sentence as a dependency tree. Hewitt and Manning (2019), introduces "Structural Probes" that tests a simple hypothesis for how dependency trees may be embedded in the hidden states of a language model. The probe in this context is a model that learns a linear transformation such that two words that are syntactically close to one another should also have less distance between their respective contextual representations.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+One of the advantages of these structural probes is simplicity. However, this simple design may not allow for full exploitation of the structure of the encoded information. This motivates us to investigate whether the dependency structure is encoded in a non-linear way. White et al. (2021), introduces three non-linear structural probes - polynomial, radial basis function, and sigmoid. We reformulate these non-linear probe variants. We then apply these probes on contextualized embeddings of BERT and BERT-Large. Since different layers of BERT capture different linguistic properties, can our probing method tell us how dependency information is encoded in every layer? This question (as far as we know) hasn't been answered yet in the existing literature. We answer this question by applying a non-linear probing variant-RBF across the layers of BERT and BERT-Large.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+We expect the non-linear variants to perform better than linear probes due to the complex nature of the dependency trees which might be better captured by non-linear probes. We test this hypothesis quantitatively using undirected attachment score (UUAS). Additionally, we test this hypothesis qualitatively by introducing a measure that computes the strength with which the probe predicts dependency between two words. 
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+We find that Radial Basis Function (RBF) probe is more effective than the linear probe for BERT. And we are also able to understand how every layer gradually encodes syntactical information to form a complete dependency tree.
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
+The code implementation of our study is publicly available <a href="https://github.com/madhu221b/probing-lms">here</a>.
+Read more <a href="https://arxiv.org/abs/2402.16168v1">here</a>.
