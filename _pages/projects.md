@@ -4,9 +4,9 @@ title: projects
 permalink: /projects/
 description: 
 nav: true
-nav_order: 3
+nav_order: 1
 display_categories: [masters]
-horizontal: true
+horizontal: false
 ---
 
 <!-- pages/projects.md -->
