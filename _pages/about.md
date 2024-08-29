@@ -9,6 +9,7 @@ profile:
   image: prof_pic.webp
   image_circular: true # crops the image to make it circular
   more_info: >
+    @Naples with Mt. Vesuvius in the background
 
 news: false # includes a list of news items
 latest_posts: false # includes a list of the newest posts
