@@ -7,4 +7,3 @@ redirect: https://github.com/madhu221b/uva-dl2-team11/blob/main/blogpost.md
 importance: -3
 category: masters
 ---
-
